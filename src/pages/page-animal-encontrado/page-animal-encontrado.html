@@ -1,0 +1,60 @@
+<!--
+  Generated template for the PageAnimalEncontradoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Postar animal encontrado</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="info-pet-encontrado">
+    <ion-label text-wrap>Preencha abaixo as informações com as caracteristicas do animal, usamos essas informações para
+      facilitar o encontro do animal com o dono. Marque as opções que melhor se apliquem às caracteristicas.</ion-label>
+  </div><br>
+  <div class="info-pet-caract">
+    <ion-item no-lines>
+      <ion-label>Espécie do animal *</ion-label>
+      <ion-select [(ngModel)]="especie" multiple="false">
+        <ion-option>Cachorro</ion-option>
+        <ion-option>Gato</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item no-lines>
+      <ion-label>Porte do animal *</ion-label>
+      <ion-select [(ngModel)]="porte" multiple="false">
+        <ion-option>Pequeno</ion-option>
+        <ion-option>Médio</ion-option>
+        <ion-option>Grande</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item no-lines>
+      <ion-label>Cor do animal *</ion-label>
+      <ion-select [(ngModel)]="cor" multiple="false">
+        <ion-option>Preto</ion-option>
+        <ion-option>Branco</ion-option>
+        <ion-option>Amarelo</ion-option>
+        <ion-option>Cinza</ion-option>
+        <ion-option>Bicolor</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item no-lines>
+      <ion-label>Possui manchas no pelo?</ion-label>
+      <ion-select [(ngModel)]="manchas" multiple="false">
+        <ion-option>Sim</ion-option>
+        <ion-option>Não</ion-option>
+      </ion-select>
+    </ion-item><br>
+    <ion-label *ngIf="fotoTirada != undefined" style="
+    text-align: center">Foto do animal: </ion-label>
+    <img class="foto-class" src="{{fotoTirada}}">
+    <button *ngIf="fotoTirada == undefined" ion-button round (click)="onTakePicture()" style="margin: auto 23%;">Fotografar animal</button>
+  </div><br>
+  <button ion-button round full (click)="salvarPostagem()">Confirmar postagem</button>
+</ion-content>

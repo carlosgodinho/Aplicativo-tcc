@@ -1,0 +1,54 @@
+<ion-header>
+  <span style="float: right; zoom: 1.3">v1.0</span>
+  <ion-navbar no-border-bottom>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Tela inicial
+    </ion-title>
+  </ion-navbar>
+
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="pet">
+      <ion-segment-button (click)="ionViewDidEnter()" style="color: white" value="encontrados">
+        Pets encontrados
+      </ion-segment-button>
+      <ion-segment-button (click)="buscaAnimaisPostados()" style="color: white" value="posts">
+        Meus posts
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [class]="classTotal">
+
+  <ion-fab class="fab-position" right>
+    <button ion-fab (click)="adicionarPostagem()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+  <div [ngSwitch]="pet">
+    <ion-list *ngSwitchCase="'encontrados'">
+      <ion-item *ngFor="let pets of segment" (click)="animalEncontrado(pets)">
+        
+        <img src={{pets.img}} style="height: 250px;">
+        <h2>Rua: {{pets?.endereco?.rua}}</h2>
+        <h2>Bairro: {{pets?.endereco?.bairro}}</h2>
+        <h2>Cidade: {{pets?.endereco?.cidade}}</h2>
+        <h2>Data: {{pets?.DataDoCadastro}}</h2>
+      </ion-item>
+    </ion-list>
+    <ion-list *ngSwitchCase="'posts'">
+        <h2>Essas são as suas postagens, você pode marcar seu pet como encontrado clicando na postagem.</h2>
+      <ion-item *ngFor="let pets of segmentMeusPosts" (click)="alteraStatus(pets)">
+        <img src={{pets.img}} style="height: 250px;">
+        <h1>Pet: {{pets?.NomePet}}</h1>
+        <h2>Data: {{pets?.DataDoCadastro}}</h2>
+        <h2>Status: {{pets?.Status}}</h2>
+      </ion-item>
+    </ion-list>
+
+  </div>
+
+</ion-content>

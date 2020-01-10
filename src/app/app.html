@@ -1,0 +1,33 @@
+<ion-menu [content]="conteudo">
+        <ion-header>
+          <div class="header_title">
+            <h1>Menu usuário</h1>
+          </div>
+        </ion-header>
+        <ion-content id="side-menu21">
+          <ion-item id="cabecalho-menu" class="cabecalho-menu">
+            <div>
+              <ion-avatar item-start>
+                <!-- ion-avatar transforma a foto em
+                    formato de avatar-->
+                <img src="assets/img/avatar-padrao.jpg" menuClose="" on-click="goToPerfil()" style="zoom: 3">
+              </ion-avatar> 
+            </div>
+            <div>
+              <img class="nivel-usuario" src="assets/img/nivel-usuario.png" menuClose="" >
+            </div>
+            <h2 id="usuarioLogado"></h2>
+            <p id="clienteLogado"></p>
+          </ion-item>
+          <ion-list id="menu-list1">
+            <ion-item menuClose="" on-click="goToPerfil()" id="menu-list-item2">
+              <button ion-button>Editar perfil</button>
+            </ion-item>
+            <ion-item menuClose="" on-click="goToLogin()" id="menu-list-item2">
+              <button color="danger" ion-button>Sair p/ Login</button>
+            </ion-item>
+          </ion-list>
+        </ion-content>
+      </ion-menu>
+      
+      <ion-nav [root]="rootPage" main #conteudo swipeBackEnabled="false"></ion-nav>

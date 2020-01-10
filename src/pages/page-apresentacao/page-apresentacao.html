@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Slides</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="tutorial-page">
+
+  <ion-slides pager>
+    <ion-slide>
+      <ion-toolbar>
+        <ion-buttons end>
+          <button ion-button color="primary" (click)="irPaginaInicial()">Pular tutorial</button>
+        </ion-buttons>
+      </ion-toolbar>
+      <img src="assets/img/dogperdido.png" class="slide-image" />
+      <h2 class="slide-title">Viu um animal perdido?</h2>
+      <div>
+        <p class="title1">Na tela inicial clique no ícone: </p>
+        <img src="assets/img/icone-add-postagem.png" class="icon-add-presentation1" />
+      </div>
+      <div>
+        <p class="title2">Em seguinda clique em: </p>
+        <img src="assets/img/encontrou-animal.png" class="icon-add-presentation2" />
+      </div>
+      <div>
+        <p class="title2">Depois é só preencher com as informações do pet com a maior quantidade de detalhes que
+          conseguir
+          pois, quanto mais informações, mais fácil será para nós, encontrarmos o dono. </p>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <ion-toolbar>
+        <ion-buttons end>
+          <button ion-button color="primary">Pular tutorial</button>
+        </ion-buttons>
+      </ion-toolbar>
+      <img src="assets/img/gato-perdido.png" class="slide-image2" />
+      <h2 class="slide-title">Perdeu um animal?</h2>
+      <div>
+        <p class="title1">Na tela inicial clique no ícone: </p>
+        <img src="assets/img/icone-add-postagem.png" class="icon-add-presentation1" />
+      </div>
+      <div>
+        <p class="title2">Em seguinda clique em: </p>
+        <img src="assets/img/perdeu-animal.png" class="icon-add-presentation2" />
+      </div>
+      <div>
+        <p class="title2">Depois é só preencher com as informações do pet com a maior quantidade de detalhes que
+          conseguir
+          pois, quanto mais informações, mais fácil será para nós, encontrarmos o seu pet. </p>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <ion-toolbar>
+      </ion-toolbar>
+      <h2 class="slide-title">Pronto pra ajudar?</h2>
+      <button ion-button large clear icon-end color="primary" (click)="irPaginaInicial()">
+        sim
+        <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

@@ -1,0 +1,45 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Perfil</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-item no-lines>
+    <div class="avatar-wrapper">
+    <ion-avatar>
+      <img [src]="avatar"> <!--com o [binding no src ele consegue pegar o valor de 
+      avatar dinamicamente-->
+    </ion-avatar>
+    <button (click)="tiraFoto()" class="btn-tirar-foto" ion-button icon-only round>
+      <ion-icon name="camera"></ion-icon>
+    </button>
+  </div>
+  </ion-item>
+  <ion-card> <!-- da a impressão que o conteudi esta dentro de um catão-->
+    <ion-item>
+      <ion-icon name="contact" item-left></ion-icon>
+      {{ usuarioLogado?.nome }}
+    </ion-item>
+
+    <ion-item>
+        <ion-icon name="calendar" item-left></ion-icon>
+        {{ usuarioLogado?.dataNascimento }}
+      </ion-item>
+
+      <ion-item>
+          <ion-icon name="at" item-left></ion-icon>
+          {{ usuarioLogado?.email }}
+        </ion-item>
+
+          <ion-item>
+              <ion-icon name="call" item-left></ion-icon>
+              {{ usuarioLogado?.telefone }}
+            </ion-item>
+  </ion-card>
+
+</ion-content>
